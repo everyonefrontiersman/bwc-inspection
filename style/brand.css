@@ -1,0 +1,137 @@
+/* BWC brand system — professional inspection / conformity look */
+:root {
+  /* Primary: deep teal (trust, quality, compliance) */
+  --back-color: #0b3d38;
+  --back-color-mid: #0f4f48;
+  --back-color-soft: #145a52;
+
+  /* Accent: muted gold (premium, ISO — not bright yellow) */
+  --main-color: #d4b06a;
+  --main-color-hover: #c4a265;
+  --secondary-color: #f3e8d0;
+
+  /* Neutrals — tuned for WCAG AA contrast on light/dark surfaces */
+  --text-color: #15202b;
+  --text-muted: #3d4f5f;
+  --text-on-dark: #ffffff;
+  --text-on-dark-muted: rgba(255, 255, 255, 0.92);
+  --surface: #f5f7f9;
+  --surface-alt: #eef1f4;
+  --white: #ffffff;
+  --border: #d8dee6;
+
+  /* Effects */
+  --box-shadow: 0 4px 18px rgba(11, 61, 56, 0.08);
+  --box-shadow-lg: 0 12px 36px rgba(11, 61, 56, 0.12);
+  --overlay-dark: rgba(7, 32, 30, 0.72);
+  --overlay-brand: rgba(11, 61, 56, 0.88);
+
+  --padding-top: 80px;
+  --padding-bottom: 80px;
+  --radius: 8px;
+  --header-height: 88px;
+
+  --font-family: "IBM Plex Sans Arabic", "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --transition: 0.25s ease;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family);
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--text-color);
+  background-color: var(--white);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family);
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--text-color);
+  letter-spacing: 0;
+}
+
+p {
+  margin-top: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition), background-color var(--transition), border-color var(--transition), transform var(--transition), box-shadow var(--transition);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Readable selection */
+::selection {
+  background: rgba(196, 162, 101, 0.28);
+  color: var(--text-color);
+}
+
+/* Professional scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--surface);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--back-color-soft);
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--back-color);
+}
+
+/* Floating WhatsApp — refined */
+.Whatsapp {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  z-index: 9000 !important;
+  width: 52px;
+  height: 52px;
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  color: #fff !important;
+  background-color: #1faa55 !important;
+  border-radius: 50%;
+  box-shadow: 0 6px 20px rgba(31, 170, 85, 0.35);
+  font-size: 1.55rem;
+  border: none !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.Whatsapp:hover {
+  background-color: #189447 !important;
+  color: #fff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(31, 170, 85, 0.4);
+}
+
+/* Subtle focus for accessibility */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--main-color);
+  outline-offset: 3px;
+}

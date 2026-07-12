@@ -1,0 +1,234 @@
+/* start variables */
+:root {
+  --main-color: #d4b06a;
+  --secondary-color: #f3e8d0;
+  --back-color: #0b3d38;
+  --box-shadow: 0 4px 18px rgba(11, 61, 56, 0.08);
+  --text-color: #15202b;
+  --padding-top: 80px;
+  --padding-bottom: 80px;
+}
+
+/* fonts */
+* {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family), "IBM Plex Sans Arabic", "IBM Plex Sans", system-ui, sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+a,
+ul,
+li {
+  text-decoration: none;
+  list-style-type: none;
+}
+
+a {
+  display: inline-block;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* Start Container Media Screen */
+.container {
+  padding: 0 15px;
+  margin: auto;
+}
+
+/* Small Screens */
+@media (min-width : 576px) {
+  .container {
+    width: 540px;
+  }
+}
+
+/* Medium Secreens */
+@media (min-width : 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+/* Large Secreen */
+@media (min-width : 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+/* X-Large Secreen */
+@media (min-width : 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+/* XX-Large Secreen */
+@media (min-width : 1400px) {
+  .container {
+    width: 1320px;
+  }
+}
+
+/* End Container Media Screen */
+/* Start Header */
+header {
+  background-color: var(--back-color);
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-shadow: 0 2px 16px rgba(7, 31, 29, 0.18);
+  border-bottom: 1px solid rgba(196, 162, 101, 0.18);
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .container img {
+  max-width: 120px;
+}
+
+.logo {
+  padding: 20px;
+}
+
+.btn_menu,
+.btn_close {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  font-size: 2rem;
+}
+
+.btn_menu {
+  color: #fff;
+}
+
+.btn_menu:hover {
+  color: var(--main-color);
+}
+
+@media (min-width: 768px) {
+
+  .btn_menu,
+  .btn_close,
+  .close_nav {
+    display: none;
+  }
+}
+
+.btn_close:hover {
+  color: var(--back-color);
+}
+
+header .container a {
+  color: #ffffff;
+  transition: color 0.25s ease;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+header .container a:hover {
+  color: var(--main-color);
+}
+
+#lang-switch {
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 4px;
+  padding: 6px 12px !important;
+  color: #ffffff !important;
+  font-weight: 600;
+  font-size: 0.85rem;
+  background: transparent;
+}
+
+#lang-switch:hover {
+  background: var(--main-color);
+  border-color: var(--main-color);
+  color: #0b3d38 !important;
+}
+
+nav ul {
+  display: flex;
+  flex: 1;
+  gap: 26px;
+  align-items: center;
+  transition: all 0.25s ease;
+}
+
+@media (max-width: 767px) {
+  .overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(54, 54, 54, 0.2);
+    backdrop-filter: blur(4px);
+    z-index: 20;
+  }
+
+  .close_nav {
+    max-width: 100%;
+    margin: 10px 0px 5px;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  nav {
+    position: fixed;
+    height: 100vh;
+    z-index: 50;
+    top: 0;
+    right: -500px;
+    background-color: #fff !important;
+    box-shadow: rgba(100, 100, 111, 0.075) 0px 7px 29px 0px;
+    max-width: 100%;
+    transition: all .2s;
+  }
+
+  header .container a {
+    color: var(--back-color);
+    transition: color 0.25s ease;
+  }
+
+  #lang-switch {
+    color: var(--back-color) !important;
+    border-color: rgba(11, 61, 56, 0.35);
+  }
+
+  #lang-switch:hover {
+    background: var(--back-color);
+    color: #fff !important;
+  }
+
+  nav ul {
+    padding: 80px;
+    text-align: center;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+    white-space: nowrap;
+  }
+}
+
+/* End Header */
